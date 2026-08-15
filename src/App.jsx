@@ -1,4 +1,6 @@
 import "./App.css";
+import "./App.css";
+import officeImage from "./assets/imagess.png";
 
 function App() {
   const businessEmail = "bsbinsurancehub@gmail.com";
@@ -73,6 +75,13 @@ function App() {
               onClick={(event) => handleNavigation(event, "about")}
             >
               About
+            </a>
+
+            <a
+              href="#office"
+              onClick={(event) => handleNavigation(event, "office")}
+            >
+              Office
             </a>
 
             <a
@@ -291,6 +300,59 @@ function App() {
                   Our team remains available to help you navigate your insurance
                   journey with confidence and care.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================================
+    Office
+================================= */}
+
+        <section className="office-section" id="office">
+          <div className="container">
+            <div className="office-grid">
+              <div className="office-image-wrapper">
+                <img
+                  src={officeImage}
+                  alt="SSB Insurance HUB office"
+                  className="office-image"
+                />
+
+                <div className="office-image-badge">
+                  <span>SSB</span>
+                  <strong>Insurance HUB</strong>
+                </div>
+              </div>
+
+              <div className="office-content">
+                <div className="section-label">OUR OFFICE</div>
+
+                <h2>
+                  A place built around
+                  <span> trust.</span>
+                </h2>
+
+                <p>
+                  Visit SSB Insurance HUB at our office in Kanpur. Our team is
+                  here to provide personal guidance and help you understand your
+                  insurance options with clarity and confidence.
+                </p>
+
+                <div className="office-location">
+                  <div className="office-location-icon">⌂</div>
+
+                  <div>
+                    <span>VISIT US</span>
+                    <strong>
+                      Mall Road, Clyde House,
+                      <br />
+                      Near Heer Palace Cinema Hall,
+                      <br />
+                      Kanpur, Uttar Pradesh
+                    </strong>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
