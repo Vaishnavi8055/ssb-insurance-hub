@@ -1,8 +1,8 @@
-import './App.css'
+import "./App.css";
 
 function App() {
-  const businessEmail = 'ssbinsurancehub@gmail.com'
-  const businessPhone = '+919454256604'
+  const businessEmail = "bsbinsurancehub@gmail.com";
+  const businessPhone = "+919454256604";
 
   /*
    * Reliable section navigation.
@@ -11,33 +11,33 @@ function App() {
    * the sticky navbar can cover the top part of the target section.
    */
   const handleNavigation = (event, sectionId) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    const target = document.getElementById(sectionId)
+    const target = document.getElementById(sectionId);
 
     if (!target) {
-      return
+      return;
     }
 
-    const navbar = document.querySelector('.navbar')
-    const navbarHeight = navbar ? navbar.offsetHeight : 0
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
-    const extraSpacing = 18
+    const extraSpacing = 18;
 
     const targetPosition =
       target.getBoundingClientRect().top +
       window.scrollY -
       navbarHeight -
-      extraSpacing
+      extraSpacing;
 
     window.scrollTo({
       top: Math.max(0, targetPosition),
-      behavior: 'smooth',
-    })
+      behavior: "smooth",
+    });
 
     // Update the URL hash without triggering another native anchor jump.
-    window.history.pushState(null, '', `#${sectionId}`)
-  }
+    window.history.pushState(null, "", `#${sectionId}`);
+  };
 
   return (
     <div className="app">
@@ -50,7 +50,7 @@ function App() {
           <a
             href="#home"
             className="brand"
-            onClick={(event) => handleNavigation(event, 'home')}
+            onClick={(event) => handleNavigation(event, "home")}
           >
             <div className="brand-mark">S</div>
 
@@ -63,28 +63,28 @@ function App() {
           <nav className="nav-links" aria-label="Main navigation">
             <a
               href="#home"
-              onClick={(event) => handleNavigation(event, 'home')}
+              onClick={(event) => handleNavigation(event, "home")}
             >
               Home
             </a>
 
             <a
               href="#about"
-              onClick={(event) => handleNavigation(event, 'about')}
+              onClick={(event) => handleNavigation(event, "about")}
             >
               About
             </a>
 
             <a
               href="#team"
-              onClick={(event) => handleNavigation(event, 'team')}
+              onClick={(event) => handleNavigation(event, "team")}
             >
               Our Team
             </a>
 
             <a
               href="#contact"
-              onClick={(event) => handleNavigation(event, 'contact')}
+              onClick={(event) => handleNavigation(event, "contact")}
             >
               Contact
             </a>
@@ -93,7 +93,7 @@ function App() {
           <a
             href="#contact"
             className="nav-button"
-            onClick={(event) => handleNavigation(event, 'contact')}
+            onClick={(event) => handleNavigation(event, "contact")}
           >
             Get in Touch
           </a>
@@ -123,15 +123,15 @@ function App() {
 
               <p className="hero-description">
                 Welcome to SSB Insurance HUB — your trusted destination for
-                guidance across a wide range of insurance needs, with
-                dependable support and solutions designed around you.
+                guidance across a wide range of insurance needs, with dependable
+                support and solutions designed around you.
               </p>
 
               <div className="hero-actions">
                 <a
                   href="#contact"
                   className="primary-button"
-                  onClick={(event) => handleNavigation(event, 'contact')}
+                  onClick={(event) => handleNavigation(event, "contact")}
                 >
                   Connect With Us
                   <span>→</span>
@@ -140,7 +140,7 @@ function App() {
                 <a
                   href="#about"
                   className="secondary-button"
-                  onClick={(event) => handleNavigation(event, 'about')}
+                  onClick={(event) => handleNavigation(event, "about")}
                 >
                   Discover More
                 </a>
@@ -254,8 +254,8 @@ function App() {
               <p>
                 At SSB Insurance HUB, we believe insurance should feel simple,
                 transparent, and personal. We help individuals and businesses
-                understand their options across different types of insurance
-                and choose protection with confidence.
+                understand their options across different types of insurance and
+                choose protection with confidence.
               </p>
             </div>
 
@@ -288,8 +288,8 @@ function App() {
                 <h3>Support</h3>
 
                 <p>
-                  Our team remains available to help you navigate your
-                  insurance journey with confidence and care.
+                  Our team remains available to help you navigate your insurance
+                  journey with confidence and care.
                 </p>
               </div>
             </div>
@@ -347,6 +347,15 @@ function App() {
                 </div>
 
                 <div className="detail-row">
+                  <div className="detail-icon">◉</div>
+
+                  <div className="detail-content">
+                    <span>Co-Founder</span>
+                    <strong>Satish Omar</strong>
+                  </div>
+                </div>
+
+                <div className="detail-row">
                   <div className="detail-icon">⌂</div>
 
                   <div className="detail-content">
@@ -396,6 +405,7 @@ function App() {
             </div>
 
             <div className="team-grid">
+              {/* Founder */}
               <div className="person-card featured-person">
                 <div className="person-avatar">
                   <span>F</span>
@@ -413,6 +423,7 @@ function App() {
                 </div>
               </div>
 
+              {/* Co-Founder - Neha */}
               <div className="person-card">
                 <div className="person-avatar blue">
                   <span>CF</span>
@@ -423,12 +434,26 @@ function App() {
 
                   <h3>Neha</h3>
 
-                  <p>
-                    Supporting the vision and growth of SSB Insurance HUB.
-                  </p>
+                  <p>Supporting the vision and growth of SSB Insurance HUB.</p>
                 </div>
               </div>
 
+              {/* Co-Founder - Satish Omar */}
+              <div className="person-card">
+                <div className="person-avatar blue">
+                  <span>SO</span>
+                </div>
+
+                <div className="person-content">
+                  <span className="person-role">CO-FOUNDER</span>
+
+                  <h3>Satish Omar</h3>
+
+                  <p>Supporting the vision and growth of SSB Insurance HUB.</p>
+                </div>
+              </div>
+
+              {/* Telecaller - Sumbul Bano */}
               <div className="person-card">
                 <div className="person-avatar gold">
                   <span>T1</span>
@@ -446,6 +471,7 @@ function App() {
                 </div>
               </div>
 
+              {/* Telecaller - Khushi Pawariya */}
               <div className="person-card">
                 <div className="person-avatar purple">
                   <span>T2</span>
@@ -481,8 +507,8 @@ function App() {
                 </h2>
 
                 <p>
-                  Have a question about insurance or want to know more about
-                  SSB Insurance HUB? Our team would be happy to help with your
+                  Have a question about insurance or want to know more about SSB
+                  Insurance HUB? Our team would be happy to help with your
                   insurance requirements.
                 </p>
               </div>
@@ -555,28 +581,27 @@ function App() {
           </div>
 
           <p>
-            © {new Date().getFullYear()} SSB Insurance HUB. All rights
-            reserved.
+            © {new Date().getFullYear()} SSB Insurance HUB. All rights reserved.
           </p>
 
           <div className="footer-links">
             <a
               href="#home"
-              onClick={(event) => handleNavigation(event, 'home')}
+              onClick={(event) => handleNavigation(event, "home")}
             >
               Home
             </a>
 
             <a
               href="#about"
-              onClick={(event) => handleNavigation(event, 'about')}
+              onClick={(event) => handleNavigation(event, "about")}
             >
               About
             </a>
 
             <a
               href="#contact"
-              onClick={(event) => handleNavigation(event, 'contact')}
+              onClick={(event) => handleNavigation(event, "contact")}
             >
               Contact
             </a>
@@ -584,7 +609,7 @@ function App() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
